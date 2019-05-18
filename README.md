@@ -13,6 +13,8 @@ Based on these instructions:
 
 ## Example Playbook
 
+Please see `example-playbook.yml`
+
 ## License
 
 BSD
