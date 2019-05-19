@@ -1,0 +1,6 @@
+---
+- hosts: 
+  roles:
+    - name: ansible-role-install-nodejs
+      ansible_venv: 
+...
