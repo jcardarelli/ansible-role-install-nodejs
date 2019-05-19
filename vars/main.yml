@@ -1,2 +1,7 @@
 ---
 # vars file for ansible-role-install-nodejs
+nodejs_prereqs:
+  - apt-transport-https
+  - lsb-release
+  - curl
+  - gnupg
