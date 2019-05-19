@@ -5,55 +5,58 @@ Based on these instructions:
 - https://github.com/nodesource/distributions/blob/master/README.md#deb
 
 ## Really Quick start for localhost installation:
-```
-virtualenv --system-site-packages --python python3 ~/.virtualenvs/ansible3
-source ~/.virtualenvs/ansible3/bin/activate
-pip install ansible
-git clone https://github.com/jcardarelli/install-nodejs.git $HOME/ansible/roles/install-nodejs
-cd $HOME/ansible/roles/install-nodejs
-ANSIBLE_CONFIG=~/ansible/ansible.cfg ansible-playbook example-playbook.yml --limit localhost --ask-become-pass
-```
+
+    ```
+    virtualenv --system-site-packages --python python3 ~/.virtualenvs/ansible3
+    source ~/.virtualenvs/ansible3/bin/activate
+    pip install ansible
+    git clone https://github.com/jcardarelli/install-nodejs.git $HOME/ansible/roles/install-nodejs
+    cd $HOME/ansible/roles/install-nodejs
+    ANSIBLE_CONFIG=~/ansible/ansible.cfg ansible-playbook example-playbook.yml --limit localhost --ask-become-pass
+    ```
 
 ## Quick start:
 
 #### Setup ansible virtualenv
-```
-virtualenv --system-site-packages --python python3 ~/.virtualenvs/ansible3
-```
+
+    ```
+    virtualenv --system-site-packages --python python3 ~/.virtualenvs/ansible3
+    ```
 
 #### Activate ansible virtualenv
-```
-source ~/.virtualenvs/ansible3/bin/activate
-```
+    ```
+    source ~/.virtualenvs/ansible3/bin/activate
+    ```
 
 #### Install ansible into virtualenv
-```
-pip install ansible
-```
+    ```
+    pip install ansible
+    ```
 
 #### Clone this repo to your ansible roles directory
-```
-git clone https://github.com/jcardarelli/install-nodejs.git $HOME/ansible/roles/install-nodejs
-```
+    ```
+    git clone https://github.com/jcardarelli/install-nodejs.git $HOME/ansible/roles/install-nodejs
+    ```
 
 #### To install on localhost using example-playbook.yml
-```
-# Assuming your ansible working directory is $HOME/ansible
-cd $HOME/ansible/roles/install-nodejs
-ANSIBLE_CONFIG=~/ansible/ansible.cfg ansible-playbook example-playbook.yml --limit localhost --ask-become-pass
-```
+    ```
+    # Assuming your ansible working directory is $HOME/ansible
+    cd $HOME/ansible/roles/install-nodejs
+    ANSIBLE_CONFIG=~/ansible/ansible.cfg ansible-playbook example-playbook.yml --limit localhost --ask-become-pass
+    ```
 
 #### To install on a remote host
-```
-# Assuming your ansible working directory is $HOME/ansible
-cd $HOME/ansible/roles/install-nodejs
 
-# Copy blank playbook to a new playbook, and add in the values for host/hostgroup and the location of your ansible virtualenv directory
-cp example-playbook-blank.yml $HOME/my-playbook.yml
-
-# Assuming that ansible knows where to find your ansible.cfg file
-ansible-playbook $HOME/my-playbook.yml --ask-become-pass
-```
+    ```
+    # Assuming your ansible working directory is $HOME/ansible
+    cd $HOME/ansible/roles/install-nodejs
+    
+    # Copy blank playbook to a new playbook, and add in the values for host/hostgroup and the location of your ansible virtualenv directory
+    cp example-playbook-blank.yml $HOME/my-playbook.yml
+    
+    # Assuming that ansible knows where to find your ansible.cfg file
+    ansible-playbook $HOME/my-playbook.yml --ask-become-pass
+    ```
 
 ## Requirements
 
