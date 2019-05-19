@@ -83,6 +83,10 @@ ansible-playbook $HOME/my-playbook.yml --ask-become-pass
 
 ## Role Variables
 
+Required:
+
+- ``ansible_distribution_release``
+
 ## Dependencies
 
 - Module `github_release` requires `github3.py`. This role contains a task that will install this pip package into Ansible's virtualenv. Specify your Ansible virtualenv with the variable `"{{ ansible_venv }}"`.
