@@ -62,6 +62,7 @@ ansible-playbook $HOME/my-playbook.yml --ask-become-pass
 1. Setup module must be run with playbook to gather facts in the `ansible_facts` variable. This is the default, so if you set `gather_facts: no` in your playbook, it will break this role since variables such as `"{{ ansible_distribution_release }}"` will not be available.
 
 1. This role assumes that you're using a virtualenv setup like so:
+
   ```
   $ virtualenv --system-site-packages --python python3 ~/.virtualenvs/ansible3
   Running virtualenv with interpreter /usr/bin/python3
