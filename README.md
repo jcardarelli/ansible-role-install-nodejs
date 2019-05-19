@@ -1,6 +1,20 @@
 # ansible-role-install-nodejs
 Ansible role to install nodejs
 
+Quick start:
+``
+# Setup ansible virtualenv and install ansible into virtualenv
+virtualenv --system-site-packages --python python3 ~/.virtualenvs/ansible3
+
+# Clone this repo to your ansible roles directory
+git clone https://github.com/jcardarelli/ansible-role-install-nodejs.git $HOME/ansible/roles/install-nodejs
+
+# To install on localhost
+cd $HOME/ansible/roles/install-nodejs
+ANSIBLE_CONFIG=~/ansible/ansible.cfg ansible-playbook example-playbook.yml --limit localhost --ask-become-pass
+``
+
+
 Based on these instructions:
 - https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages
 - https://github.com/nodesource/distributions/blob/master/README.md#deb
