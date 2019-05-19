@@ -1,12 +1,5 @@
 ---
 # tasks file for install-nodejs
-- name: Install prerequisite packages, and update apt cache
-  apt:
-    name: "{{ nodejs_prereqs }}"
-    update_cache: yes
-  tags: software
-  become: yes
-
 - name: Install playbook prerequisite packages
   pip:
     name: "{{ playbook_prereqs }}"

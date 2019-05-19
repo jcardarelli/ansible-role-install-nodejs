@@ -1,10 +1,4 @@
 ---
 # vars file for install-nodejs
-nodejs_prereqs:
-  - apt-transport-https
-  - lsb-release
-  - curl
-  - gnupg
-
 playbook_prereqs:
   - github3.py
