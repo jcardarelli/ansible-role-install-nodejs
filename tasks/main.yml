@@ -45,3 +45,9 @@
   apt_key:
     url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
   become: yes
+
+- name: Create apt sources list file for the nodesource repo
+  template:
+    src: nodesource.list.j2
+    dest: /etc/apt/sources.list.d/nodesource.list
+  become: yes
