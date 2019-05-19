@@ -1,7 +1,8 @@
 # ansible-role-install-nodejs
 Ansible role to install nodejs
 
-Quick start:
+## Quick start:
+
 ```
 # Setup ansible virtualenv and install ansible into virtualenv
 virtualenv --system-site-packages --python python3 ~/.virtualenvs/ansible3
