@@ -62,6 +62,68 @@ Installing setuptools, pip, wheel...done.
 
 Please see `example-playbook.yml`
 
+## Exmaple `ansible-playbook` run
+
+```console
+you@your_computer:~/ansible/roles/install-nodejs$ ANSIBLE_CONFIG=~/ansible/ansible.cfg ansible-playbook example-playbook.yml --limit localhost --ask-become-pass
+[DEPRECATION WARNING]: DEFAULT_MODULE_LANG option, Modules are coded to set their own locale if needed for screenscraping . This feature will be removed in version 2.9. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+BECOME password:
+
+PLAY [all] ************************************************************************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] ************************************************************************************************************************************************************************************************************************
+ok: [localhost]
+
+TASK [install-nodejs : Install prerequisite packages, and update apt cache] *******************************************************************************************************************************************************************
+ [WARNING]: Could not find aptitude. Using apt-get instead
+
+ ok: [localhost]
+
+ TASK [install-nodejs : Install playbook prerequisite packages] ********************************************************************************************************************************************************************************
+ ok: [localhost]
+
+ TASK [install-nodejs : Find latest nodejs version from Github API] ****************************************************************************************************************************************************************************
+ ok: [localhost]
+
+ TASK [install-nodejs : Set variable with latest nodejs version] *******************************************************************************************************************************************************************************
+ ok: [localhost]
+
+ TASK [install-nodejs : Set variables for latest nodejs major version] *************************************************************************************************************************************************************************
+ ok: [localhost]
+
+ TASK [install-nodejs : Set other variables] ***************************************************************************************************************************************************************************************************
+ ok: [localhost]
+
+ TASK [install-nodejs : Get latest nodejs major version] ***************************************************************************************************************************************************************************************
+ ok: [localhost] => {
+       "nodejs_latest_major_version": "12"
+ }
+
+ TASK [install-nodejs : Get distribution release from ansible_facts variable] ******************************************************************************************************************************************************************
+ ok: [localhost] => {
+       "msg": "stretch"
+ }
+
+ TASK [install-nodejs : Add nodesource GPG key with apt-key] ***********************************************************************************************************************************************************************************
+ ok: [localhost]
+
+ TASK [install-nodejs : Create apt sources list file for the nodesource repo] ******************************************************************************************************************************************************************
+ ok: [localhost]
+
+ TASK [install-nodejs : Install nodejs package, and update apt cache] **************************************************************************************************************************************************************************
+ ok: [localhost]
+
+ TASK [install-nodejs : Check that node and npm binaries are in /usr/bin] **********************************************************************************************************************************************************************
+ ok: [localhost] => (item=/usr/bin/node)
+ ok: [localhost] => (item=/usr/bin/npm)
+
+ PLAY RECAP ************************************************************************************************************************************************************************************************************************************
+ localhost                  : ok=13   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+
+ you@your_computer:~/ansible/roles/install-nodejs$
+```
+
 ## License
 
 BSD
