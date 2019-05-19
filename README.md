@@ -7,6 +7,9 @@ Based on these instructions:
 
 ## Requirements
 
+Ansible v2.8+ for github_release module to have anonymous access to query repository info:
+https://github.com/ansible/ansible/issues/45391
+
 ## Role Variables
 
 ## Dependencies

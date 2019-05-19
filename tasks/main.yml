@@ -4,7 +4,42 @@
   apt:
     name: "{{ nodejs_prereqs }}"
     update_cache: yes
+  tags: software
   become: yes
+
+- name: Install playbook prerequisite packages
+  pip:
+    name: "{{ playbook_prereqs }}"
+    virtualenv: "{{ ansible_venv }}"
+    virtualenv_python: "{{ ansible_venv }}/bin/python3"
+  tags: software
+
+- name: Find latest nodejs version from Github API
+  github_release:
+    repo: node
+    user: nodejs
+    action: latest_release
+  register: nodejs_github_release
+
+- name: Set variable with latest nodejs version
+  set_fact:
+    nodejs_latest_version: "{{ nodejs_github_release.tag | regex_replace('v', '') }}"
+
+- name: Set variables for latest nodejs major version
+  set_fact:
+    nodejs_latest_major_version: "{{ nodejs_latest_version.split('.')[0] | lower  }}"
+
+- name: Set other variables
+  set_fact:
+    nodejs_repo_version: "node_{{ nodejs_latest_major_version }}.x"
+
+- name: Get latest nodejs major version
+  debug:
+    var: nodejs_latest_major_version
+
+- name: Get distribution release from ansible_facts variable
+  debug:
+    msg: "{{ ansible_distribution_release }}"
 
 - name: Add nodesource GPG key with apt-key
   apt_key:

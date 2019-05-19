@@ -5,3 +5,6 @@ nodejs_prereqs:
   - lsb-release
   - curl
   - gnupg
+
+playbook_prereqs:
+  - github3.py
