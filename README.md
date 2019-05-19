@@ -19,48 +19,52 @@ Based on these instructions:
 
 #### Setup ansible virtualenv
 
-    ```
-    virtualenv --system-site-packages --python python3 ~/.virtualenvs/ansible3
-    ```
+```
+virtualenv --system-site-packages --python python3 ~/.virtualenvs/ansible3
+```
 
 #### Activate ansible virtualenv
-    ```
-    source ~/.virtualenvs/ansible3/bin/activate
-    ```
+
+```
+source ~/.virtualenvs/ansible3/bin/activate
+```
 
 #### Install ansible into virtualenv
-    ```
-    pip install ansible
-    ```
+
+```
+pip install ansible
+```
 
 #### Clone this repo to your ansible roles directory
-    ```
-    git clone https://github.com/jcardarelli/install-nodejs.git $HOME/ansible/roles/install-nodejs
-    ```
+
+```
+git clone https://github.com/jcardarelli/install-nodejs.git $HOME/ansible/roles/install-nodejs
+```
 
 #### To install on localhost using example-playbook.yml
-    ```
-    # Assuming your ansible working directory is $HOME/ansible
-    cd $HOME/ansible/roles/install-nodejs
-    ANSIBLE_CONFIG=~/ansible/ansible.cfg ansible-playbook example-playbook.yml --limit localhost --ask-become-pass
-    ```
+
+```
+# Assuming your ansible working directory is $HOME/ansible
+cd $HOME/ansible/roles/install-nodejs
+ANSIBLE_CONFIG=~/ansible/ansible.cfg ansible-playbook example-playbook.yml --limit localhost --ask-become-pass
+```
 
 #### To install on a remote host
 
-    ```
-    # Assuming your ansible working directory is $HOME/ansible
-    cd $HOME/ansible/roles/install-nodejs
-    
-    # Copy blank playbook to a new playbook, and add in the values for host/hostgroup and the location of your ansible virtualenv directory
-    cp example-playbook-blank.yml $HOME/my-playbook.yml
-    
-    # Assuming that ansible knows where to find your ansible.cfg file
-    ansible-playbook $HOME/my-playbook.yml --ask-become-pass
-    ```
+```
+# Assuming your ansible working directory is $HOME/ansible
+cd $HOME/ansible/roles/install-nodejs
+
+# Copy blank playbook to a new playbook, and add in the values for host/hostgroup and the location of your ansible virtualenv directory
+cp example-playbook-blank.yml $HOME/my-playbook.yml
+
+# Assuming that ansible knows where to find your ansible.cfg file
+ansible-playbook $HOME/my-playbook.yml --ask-become-pass
+```
 
 ## Requirements
 
-1. Ansible v2.8+ for github_release module to have anonymous access to query repository info: https://github.com/ansible/ansible/issues/45391
+1. [Ansible v2.8+ for github_release module to have anonymous access to query repository info](https://github.com/ansible/ansible/issues/45391)
 
 1. Setup module must be run with playbook to gather facts in the `ansible_facts` variable. This is the default, so if you set `gather_facts: no` in your playbook, it will break this role since variables such as `"{{ ansible_distribution_release }}"` will not be available.
 
