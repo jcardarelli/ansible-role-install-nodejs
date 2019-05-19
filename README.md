@@ -71,6 +71,8 @@ Also creating executable in /home/stressed/.virtualenvs/ansible3/bin/python
 Installing setuptools, pip, wheel...done.
 ```
 
+1. This role was developed and tested with Debian stretch, but it may work with other Debian-based distributions. Using this on a non-Debian distribution probably won't work due to packages being installed with the `apt` module. Moving to the `package` module may fix this.
+
 ## Role Variables
 
 ## Dependencies
