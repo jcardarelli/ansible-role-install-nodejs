@@ -62,7 +62,7 @@ Installing setuptools, pip, wheel...done.
 
 Please see `example-playbook.yml`
 
-## Exmaple `ansible-playbook` run
+## Example `ansible-playbook` run
 
 ```console
 you@your_computer:~/ansible/roles/install-nodejs$ ANSIBLE_CONFIG=~/ansible/ansible.cfg ansible-playbook example-playbook.yml --limit localhost --ask-become-pass
