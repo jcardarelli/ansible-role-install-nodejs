@@ -6,6 +6,8 @@ Ansible role to install nodejs
 ```
 # Setup ansible virtualenv and install ansible into virtualenv
 virtualenv --system-site-packages --python python3 ~/.virtualenvs/ansible3
+source ~/.virtualenvs/ansible3/bin/activate
+pip install ansible
 
 # Clone this repo to your ansible roles directory
 git clone https://github.com/jcardarelli/ansible-role-install-nodejs.git $HOME/ansible/roles/install-nodejs
