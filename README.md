@@ -30,6 +30,7 @@ git clone https://github.com/jcardarelli/install-nodejs.git $HOME/ansible/roles/
 
 #### To install on localhost
 ```
+# Assuming your ansible working directory is $HOME/ansible
 cd $HOME/ansible/roles/install-nodejs
 ANSIBLE_CONFIG=~/ansible/ansible.cfg ansible-playbook example-playbook.yml --limit localhost --ask-become-pass
 ```
