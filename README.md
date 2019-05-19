@@ -64,14 +64,15 @@ ansible-playbook $HOME/my-playbook.yml --ask-become-pass
 1. This role was developed and tested with Debian stretch, but it may work with other Debian-based distributions. Using this on a non-Debian distribution probably won't work due to packages being installed with the `apt` module. Moving to the `package` module may fix this.
 
 1. This role assumes that you're using a virtualenv setup like so:
-```
-$ virtualenv --system-site-packages --python python3 ~/.virtualenvs/ansible3
-Running virtualenv with interpreter /usr/bin/python3
-Using base prefix '/usr'
-New python executable in /home/stressed/.virtualenvs/ansible3/bin/python3
-Also creating executable in /home/stressed/.virtualenvs/ansible3/bin/python
-Installing setuptools, pip, wheel...done.
-```
+
+    ```
+    $ virtualenv --system-site-packages --python python3 ~/.virtualenvs/ansible3
+    Running virtualenv with interpreter /usr/bin/python3
+    Using base prefix '/usr'
+    New python executable in /home/stressed/.virtualenvs/ansible3/bin/python3
+    Also creating executable in /home/stressed/.virtualenvs/ansible3/bin/python
+    Installing setuptools, pip, wheel...done.
+    ```
 
 ## Role Variables
 
