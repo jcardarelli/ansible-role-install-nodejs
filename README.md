@@ -1,4 +1,4 @@
-# ansible-role-install-nodejs
+# install-nodejs
 Ansible role to install nodejs
 
 Based on these instructions:
@@ -25,7 +25,7 @@ pip install ansible
 
 #### Clone this repo to your ansible roles directory
 ```
-git clone https://github.com/jcardarelli/ansible-role-install-nodejs.git $HOME/ansible/roles/install-nodejs
+git clone https://github.com/jcardarelli/install-nodejs.git $HOME/ansible/roles/install-nodejs
 ```
 
 #### To install on localhost

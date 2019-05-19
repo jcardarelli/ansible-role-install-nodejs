@@ -1,5 +1,5 @@
 ---
-# tasks file for ansible-role-install-nodejs
+# tasks file for install-nodejs
 - name: Install prerequisite packages, and update apt cache
   apt:
     name: "{{ nodejs_prereqs }}"
