@@ -5,12 +5,14 @@ Based on these instructions:
 - https://github.com/nodesource/distributions/blob/master/README.md#deb
 
 ## Really Quick start for localhost installation:
+```
 virtualenv --system-site-packages --python python3 ~/.virtualenvs/ansible3
 source ~/.virtualenvs/ansible3/bin/activate
 pip install ansible
 git clone https://github.com/jcardarelli/install-nodejs.git $HOME/ansible/roles/install-nodejs
 cd $HOME/ansible/roles/install-nodejs
 ANSIBLE_CONFIG=~/ansible/ansible.cfg ansible-playbook example-playbook.yml --limit localhost --ask-become-pass
+```
 
 ## Quick start:
 
