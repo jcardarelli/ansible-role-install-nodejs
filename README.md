@@ -1,5 +1,4 @@
 # install-nodejs
-Ansible role to install nodejs
 
 Based on these instructions:
 - https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions-enterprise-linux-fedora-and-snap-packages
